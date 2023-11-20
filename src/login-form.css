@@ -1,0 +1,83 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /*border: 1px solid black;*/
+    height: 340px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*border: 1px solid black;*/
+    font-family: Calibri, serif;
+    font-size: 20px;
+    height: 18%;
+}
+
+.form-control-remember-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*border: 1px solid black;*/
+    font-family: Calibri, serif;
+    font-size: 20px;
+    height: 8%;
+}
+
+.email-error-message {
+    font-family: Calibri, serif;
+    font-size: 18px;
+    /*border: 1px solid black;*/
+}
+
+.password-error-message {
+    font-family: Calibri, serif;
+    font-size: 18px;
+    /*border: 1px solid black;*/
+}
+
+.confirm-password-error-message {
+    font-family: Calibri, serif;
+    font-size: 18px;
+    /*border: 1px solid black;*/
+}
+
+.email-input {
+    height: 24px;
+    width: 250px;
+}
+
+.password-input {
+    height: 24px;
+    width: 250px;
+}
+
+.confirm-password-input {
+    height: 24px;
+    width: 250px;
+}
+
+.remember-me-input {
+    margin-left: 4px;
+}
+
+.submit-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /*border: 1px solid black;*/
+    height: 10%;
+}
+
+.submit-button {
+    width: 40%;
+    height: 100%;
+    font-family: Calibri, serif;
+    font-size: 18px;
+}
