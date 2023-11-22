@@ -1,83 +1,226 @@
 .login-form {
+    /*border: 1px solid black;*/
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+
+    width: 20%;
+    height: 540px;
+    margin-top: 200px;
+
+    background-color: #cdddde;
+    border-radius: 5px;
+}
+
+.form-title-container {
     /*border: 1px solid black;*/
-    height: 340px;
+}
+
+.form-title {
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.0;
+
+    color: #333333;
 }
 
 .form-control {
+    /*border: 1px solid black;*/
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    width: 90%;
+    height: 13%;
     margin-left: 10px;
     margin-right: 10px;
-    /*border: 1px solid black;*/
-    font-family: Calibri, serif;
-    font-size: 20px;
-    height: 18%;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    color: #333333;
 }
 
-.form-control-remember-me {
+.form-control-terms-of-user {
+    /*border: 1px solid black;*/
+
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+
+    width: 90%;
+    height: 10%;
     margin-left: 10px;
     margin-right: 10px;
-    /*border: 1px solid black;*/
-    font-family: Calibri, serif;
-    font-size: 20px;
-    height: 8%;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #333333;
 }
 
 .email-error-message {
-    font-family: Calibri, serif;
-    font-size: 18px;
     /*border: 1px solid black;*/
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #f62681;
 }
 
 .password-error-message {
-    font-family: Calibri, serif;
-    font-size: 18px;
     /*border: 1px solid black;*/
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #f62681;
 }
 
 .confirm-password-error-message {
-    font-family: Calibri, serif;
-    font-size: 18px;
     /*border: 1px solid black;*/
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #f62681;
+}
+
+.terms-of-user-error-message {
+    /*border: 1px solid black;*/
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #f62681;
 }
 
 .email-input {
-    height: 24px;
-    width: 250px;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 2px;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #333333;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
 }
 
 .password-input {
-    height: 24px;
-    width: 250px;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 2px;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #333333;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
 }
 
 .confirm-password-input {
-    height: 24px;
-    width: 250px;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 2px;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #333333;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
 }
 
-.remember-me-input {
-    margin-left: 4px;
+.terms-of-user-input {
+    margin-right: 5px;
+}
+
+.buttons-container {
+    /*border: 1px solid black;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 80%;
+    height: 12%;
 }
 
 .submit-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     /*border: 1px solid black;*/
-    height: 10%;
+
+    width: 40%;
 }
 
 .submit-button {
-    width: 40%;
+    width: 100%;
     height: 100%;
-    font-family: Calibri, serif;
-    font-size: 18px;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: .2rem;
+
+    color: #4d4d4d;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    background-color: #aee8f5;
+}
+
+.login-button-container {
+    /*border: 1px solid black;*/
+
+    width: 40%;
+}
+
+.login-button {
+    width: 100%;
+    height: 100%;
+
+    font-family: Poppins-Regular, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: .2rem;
+
+    color: #4d4d4d;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+    background-color: #c0ebf3;
 }
