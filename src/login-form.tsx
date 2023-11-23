@@ -9,6 +9,7 @@ import './login-form.css';
 
 /*Тип данных, который будут отправляться нашей формой.*/
 type FormData = {
+    username: string
     email: string
     password: string
     confirmPassword: string
@@ -17,9 +18,11 @@ type FormData = {
 
 /*Форма для регистрации.*/
 export const LoginForm = () => {
+    const usernameID = useId();
     const emailID = useId();
     const passwordID = useId();
     const confirmPasswordID = useId();
+    const usernameErrorMessageID = useId();
     const emailErrorMessageID = useId();
     const passwordErrorMessageID = useId();
     const confirmPasswordErrorMessageID = useId();
@@ -40,22 +43,74 @@ export const LoginForm = () => {
 
     /*Элемент "form" позволяет использовать встроенную валидацию. Если не нужно использовать такую валидацию, то можно
     использовать атрибут "noValidate".*/
-    return <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
+    return <form className='login-form' onSubmit={handleSubmit(onSubmit)} method='post'>
         <div className='form-title-container'>
             <p className='form-title'>SIGN UP</p>
         </div>
 
         <div className='form-control'>
-            <div>
+            <div className='username-title-container'>
+                <label className='username-title' htmlFor={usernameID}>Username:</label>
+            </div>
+
+            <div className='username-input-container'>
+                <input
+                    // className='username-input'
+                    className={errors.username ? 'username-input input-error' : 'username-input'}
+                    id={usernameID}
+                    // name='username'
+                    type='text'
+                    aria-describedby={usernameErrorMessageID}
+                    placeholder=' Enter username...'
+                    // required
+                    /*При помощи атрибута "pattern" устанавливаем ограничение на вводимые символы.*/
+                    // pattern={'[A-Za-z0-9\\-_\\.]{4,20}'}
+                    {...register('username', {
+                        required: 'The username field is required',
+                        minLength: {
+                            value: 4,
+                            message: 'Minimum length is 4 characters'
+                        },
+                        maxLength: {
+                            value: 20,
+                            message: 'Maximum length is 20 characters'
+                        },
+                        pattern: {
+                            /*
+                            (?=.{4,20}$) username is 8-20 characters long
+                            (?![_.]) no _ or . at the beginning
+                            (?!.*[_.]{2}) no __ or _. or ._ or .. inside
+                            [a-zA-Z0-9._] allowed characters
+                            +(?<![_.])$ no _ or . at the end
+                            */
+                            value: /^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/i,
+                            message: 'Invalid username'
+                        }
+                    })}
+                />
+            </div>
+
+            <div className='username-error-message-container'>
+                {errors.username && (
+                    <p id={usernameErrorMessageID} aria-live='assertive' className='username-error-message'>
+                            <strong>Error:</strong> {errors.username.message}
+                    </p>
+                )}
+            </div>
+        </div>
+
+        <div className='form-control'>
+            <div className='email-title-container'>
                 {/*Нужно связывать каждый элемент управления формой с элементом "label". Для этого нужно использовать
                 атрибут "for" или "htmlFor" в элементе "label" и атрибут "id" в элементе управления формой с одинаковыми
                 значениями.*/}
-                <label htmlFor={emailID}>Email:</label>
+                <label className='email-title' htmlFor={emailID}>Email:</label>
             </div>
 
-            <div>
+            <div className='email-input-container'>
                 <input
-                    className='email-input'
+                    // className='email-input'
+                    className={errors.email ? 'email-input input-error' : 'email-input'}
                     id={emailID}
                     // name='email'
                     type='email'
@@ -65,7 +120,7 @@ export const LoginForm = () => {
                     /*В атрибует "aria-describedby" указываем значение атрибута "id" в сообщении об ошибке, чтобы
                     связать элемент управления формой и сообщение об ошибке в этой форме.*/
                     aria-describedby={emailErrorMessageID}
-                    placeholder=' Email address...'
+                    placeholder=' Enter email address...'
                     // required
                     /*Регистриуем поле формы при помощи хука "useForm()". Здесь также можно указать некоторые
                     атрибуты, такие как "name" и "required".*/
@@ -73,60 +128,62 @@ export const LoginForm = () => {
                 />
             </div>
 
-            <div>
+            <div className='email-error-message-container'>
                 {errors.email && (
                     /*Используем атрибут "aria-live" со значением "assertive". Этот атрибут и атрибут "aria-describedby"
                     позволяют скринридерам зачитывать ошибки формы.*/
                     <p id={emailErrorMessageID} aria-live='assertive' className='email-error-message'>
-                        Error: {errors.email.message}
+                        <strong>Error:</strong> {errors.email.message}
                     </p>
                 )}
             </div>
         </div>
 
         <div className='form-control'>
-            <div>
-                <label htmlFor={passwordID}>Password:</label>
+            <div className='password-title-container'>
+                <label className='password-title' htmlFor={passwordID}>Password:</label>
             </div>
 
-            <div>
+            <div className='password-input-container'>
                 <input
-                    className='password-input'
+                    // className='password-input'
+                    className={errors.password ? 'password-input input-error' : 'password-input'}
                     id={passwordID}
                     // name='password'
                     type='password'
                     autoComplete='new-password'
                     aria-describedby={passwordErrorMessageID}
-                    placeholder=' ****************'
+                    placeholder=' Enter password...'
                     // required
                     // minLength={8}
                     {...register('password', {
                         required: 'The password field is required',
                         minLength: {
                             value: 8,
-                            message: 'Min length is 8 characters'
+                            message: 'Minimum length is 8 characters'
                         }
                     })}
                 />
             </div>
 
-            <div>
+            <div className='password-error-message-container'>
                 {errors.password && (
                     <p id={passwordErrorMessageID} aria-live='assertive' className='password-error-message'>
-                        Error: {errors.password.message}
+                        <strong>Error:</strong> {errors.password.message}
                     </p>
                 )}
             </div>
         </div>
 
         <div className='form-control'>
-            <div>
-                <label htmlFor={confirmPasswordID}>Confirm password:</label>
+            <div className='confirm-password-title-container'>
+                <label className='confirm-password-title' htmlFor={confirmPasswordID}>Confirm password:</label>
             </div>
 
-            <div>
+            <div className='confirm-password-input-container'>
                 <input
-                    className='confirm-password-input'
+                    // className='confirm-password-input'
+                    className={errors.confirmPassword ? 'confirm-password-input input-error' : 'confirm-password-input'}
                     id={confirmPasswordID}
                     // name='confirm-password'
                     type='password'
@@ -134,24 +191,24 @@ export const LoginForm = () => {
                     новый пароль.*/
                     autoComplete='new-password'
                     aria-describedby={confirmPasswordErrorMessageID}
-                    placeholder=' ****************'
+                    placeholder=' Confirm password...'
                     // required
                     // minLength={8}
                     {...register('confirmPassword', {
                         required: 'The confirm password field is required',
                         minLength: {
                             value: 8,
-                            message: 'Min length is 8 characters'
+                            message: 'Minimum length is 8 characters'
                         }
                     })}
                 />
             </div>
 
-            <div>
+            <div className='confirm-password-error-message-container'>
                 {errors.confirmPassword && (
                     <p id={confirmPasswordErrorMessageID} aria-live='assertive'
                        className='confirm-password-error-message'>
-                        Error: {errors.confirmPassword.message}
+                        <strong>Error:</strong> {errors.confirmPassword.message}
                     </p>
                 )}
             </div>
@@ -160,25 +217,26 @@ export const LoginForm = () => {
         <div className='form-control-terms-of-user'>
             {/*Также чтобы связать элемент управления формой с элементом "label", можно поместить этот элемент
             управления формой внутрь элемента "label".*/}
-            <div>
-                <label>
+            <div className='terms-of-user-title-and-input-container'>
+                <label className='terms-of-user-title'>
                     <input
-                        className='terms-of-user-input'
+                        // className='terms-of-user-input'
+                        className={errors.termsOfUser ? 'terms-of-user-input input-error' : 'terms-of-user-input'}
                         // name='termsOfUser'
                         type='checkbox'
                         aria-describedby={termsOfUserErrorMessageID}
                         // required
                         {...register('termsOfUser', {required: 'The Terms of User field is required'})}
                     />
-                    I agree to the Terms of User
+                    <span>I agree to the Terms of User</span>
                 </label>
             </div>
 
-            <div>
+            <div className='terms-of-user-error-message-container'>
                 {errors.termsOfUser && (
                     <p id={termsOfUserErrorMessageID} aria-live='assertive'
                        className='terms-of-user-error-message'>
-                        Error: {errors.termsOfUser.message}
+                        <strong>Error:</strong> {errors.termsOfUser.message}
                     </p>
                 )}
             </div>
@@ -188,7 +246,7 @@ export const LoginForm = () => {
             <div className='submit-button-container'>
                 {/*У элемента "button" по умолчанию атрибут "type" имеет значение "submit, но лучше указывать это
                 явно."*/}
-                <button disabled={isSubmitting} type='submit' className='submit-button'>SIGN UP</button>
+                <button className='submit-button' type='submit' disabled={isSubmitting}>SIGN UP</button>
             </div>
 
             <div className='login-button-container'>
