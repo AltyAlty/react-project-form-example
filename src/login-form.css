@@ -116,6 +116,10 @@
     box-shadow: 1px 1px 5px 0 #f62681;
 }
 
+.email-input:invalid {
+    box-shadow: 1px 1px 5px 0 #f62681;
+}
+
 .terms-of-user-input {
     margin-right: 5px;
     width: 18px;
