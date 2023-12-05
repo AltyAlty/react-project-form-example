@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+<h1 align="center">Sign-up Form Example</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an example of a sign-up form built on `React` using the `react-hook-form` library. The form is my attempt to use the best practices for such forms.
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+The sign-up form contains:
+* Right types for the fields in order to provide better experience for users, because modern browsers provide additional tools (such as autocompletion, field validation or password generating) depending on field types.
+* Field highlighting to give users right understanding where they are in the form and whether they have made any mistakes or not.
+* Fields validation, error processing and showing error messages to help users make less mistakes and faster complete the form.
+* Using special attributes to allow screen readers to read the fields, which is, for example, essential to people who are blind, and is useful to people who are visually impaired, illiterate, or have a learning disability.
+* A number of other things that generally improve user interaction with the form.
 
-### `yarn start`
+my list of the vocabularies I have done during reading books, watching movies, playing games and doing other stuff in English.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [ ] In process
+* [x] Done
 
-### `yarn test`
+<br>  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**`BOOKS`**
+* [x] **_Starship Troopers_**. **Robert Anson Heinlein**. 1959
 
-### `yarn build`
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**`MOVIES`**
+* [x] **_Blade Runner_**. 1982
+* [x] **_Blade Runner 2049_**. 2017
+* [x] **_Drive_**. 2011
+* [x] **_Starship Troopers_**. 1997
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**`GAMES`**
+* [x] **_System Shock 1_**. 1994
+* [x] **_System Shock 2_**. 1995
+* [x] **_Mass Effect 1_**. 2007
+* [ ] **_Mass Effect 2_**. 2010
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<hr>
