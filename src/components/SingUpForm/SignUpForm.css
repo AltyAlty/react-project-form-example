@@ -1,0 +1,235 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 22%;
+    height: 840px;
+    margin-top: 3%;
+
+    background-color: #2aabab;
+    border-radius: 6px;
+    box-shadow: 0 40px 50px rgba(0, 0, 0, .2);
+}
+
+.form-title-container {
+    margin-top: 30px;
+}
+
+.form-title {
+    font-size: 2.05rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #264653;
+}
+
+.form-title-description-container {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.form-title-description {
+    text-align: center;
+    font-size: 1.0rem;
+    line-height: 1;
+    color: #264653;
+}
+
+.form-title-description a {
+    text-decoration: none;
+}
+
+.form-title-description a:visited {
+    color: #d3b672;
+}
+
+.form-control,
+.form-control-terms-of-user,
+.form-control-privacy-policy {
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    margin-bottom: 4px;
+}
+
+.form-control {
+    height: 13%;
+}
+
+.form-control-terms-of-user,
+.form-control-privacy-policy {
+    margin-left: 15%;
+
+    height: 4%;
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+
+.form-control-privacy-policy {
+    margin-top: 10px;
+}
+
+.username-title-container,
+.email-title-container,
+.password-title-container,
+.confirm-password-title-container {
+    margin-bottom: 5px;
+    margin-left: 10%;
+}
+
+.username-title,
+.email-title,
+.password-title,
+.confirm-password-title,
+.terms-of-user-title,
+.privacy-policy-title {
+    font-weight: 400;
+    line-height: 1.2;
+    color: #264653;
+}
+
+.username-title,
+.email-title,
+.password-title,
+.confirm-password-title {
+    font-size: 1.25rem;
+}
+
+.terms-of-user-title,
+.privacy-policy-title {
+    font-size: 1rem;
+    margin-left: 5px;
+}
+
+.username-error-message-container,
+.email-error-message-container,
+.password-error-message-container,
+.confirm-password-error-message-container {
+    margin-left: 10%;
+}
+
+.terms-of-user-error-message-container,
+.privacy-policy-error-message-container {
+    margin-left: 1%;
+}
+
+.username-error-message,
+.email-error-message,
+.password-error-message,
+.confirm-password-error-message,
+.terms-of-user-error-message,
+.privacy-policy-error-message {
+    margin-top: 4px;
+
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #346072;
+}
+
+.username-input-container,
+.email-input-container,
+.password-input-container,
+.confirm-password-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.username-input,
+.email-input,
+.password-input,
+.confirm-password-input {
+    width: 80%;
+    height: 38px;
+
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #333333;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 3px;
+}
+
+.username-input:hover,
+.email-input:hover,
+.password-input:hover,
+.confirm-password-input:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .2);
+}
+
+.terms-of-user-input:hover,
+.privacy-policy-input:hover {
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
+}
+
+.username-input:focus,
+.email-input:focus,
+.password-input:focus,
+.confirm-password-input:focus {
+    outline: 2px solid oklch(0.704 0.12 223.504);
+}
+
+.input-error {
+    box-shadow: 3px 3px 10px 0 #f62681;
+}
+
+.email-input:invalid {
+    box-shadow: 3px 3px 10px 0 #f62681;
+}
+
+.terms-of-user-input,
+.privacy-policy-input {
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    width: 80%;
+    height: 14%;
+}
+
+.submit-button-container,
+.login-button-container {
+    width: 40%;
+}
+
+.submit-button,
+.login-button {
+    width: 100%;
+    height: 100%;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: .15rem;
+    color: #4d4d4d;
+
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-button:hover,
+.submit-button:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .2);
+}
+
+.submit-button {
+    background-color: #ecbe60;
+}
+
+.login-button {
+    background-color: #f4a261;
+}

@@ -1,12 +1,22 @@
+/*
+Создание шаблона проекта: yarn create react-app . --template typescript
+Установка react-hook-form: yarn add react-hook-form
+
+Запуск приложения: yarn start
+*/
+
+/*Статья по формам: https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms
+Курс по формам на web.dev: https://web.dev/learn/forms/
+Атрибут "htmlFor" в React является аналогом атрибута "for".*/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
 root.render(
     <React.StrictMode>
         <App/>

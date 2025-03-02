@@ -1,23 +1,22 @@
-/*
-Атрибут "htmlFor" в React является аналогом атрибута "for".
-"useId" это часть React, которая позволяет генерировать ID.
-*/
+/*Хук "useId()" это часть React, которая позволяет генерировать ID.*/
 import {useId} from 'react';
-/*Библиотека "react-hook-form" позволяет работать с формами в React.*/
+/*Библиотека "react-hook-form" позволяет работать с формами в React. Берем из нее хук "useForm".*/
 import {useForm} from 'react-hook-form';
-import './login-form.css';
+import './SignUpForm.css';
 
-/*Тип данных, который будут отправляться нашей формой.*/
+/*Тип данных, который будет отправляться нашей формой.*/
 type FormData = {
     username: string
     email: string
     password: string
     confirmPassword: string
     termsOfUser: boolean
+    privacyPolicy: boolean
 };
 
 /*Форма для регистрации.*/
-export const LoginForm = () => {
+export const SignUpForm = () => {
+    /*Генерируем ID для полей.*/
     const usernameID = useId();
     const emailID = useId();
     const passwordID = useId();
@@ -27,30 +26,43 @@ export const LoginForm = () => {
     const passwordErrorMessageID = useId();
     const confirmPasswordErrorMessageID = useId();
     const termsOfUserErrorMessageID = useId();
+    const privacyPolicyErrorMessageID = useId();
 
-    /*Используем хук "useForm()" из библиотеки "react-hook-form". "register" используется для регистрации полей формы, а
-    "handleSubmit" для указания перехватчика данных, которые будут отправляться формой. Чтобы не было возможности
-    кликнуть много раз по кнопке отправки формы и много раз отправить данные формы, используем "isSubmitting", чтобы
-    знать когда происходит отправка данных формы с целью отключить кнопку отправки данных формы в такой момент. Для
-    вывода ошибок используем "errors".*/
+    /*Используем хук "useForm()" из библиотеки "react-hook-form". Переменная "register" используется для регистрации
+    полей формы, а переменная "handleSubmit" для указания перехватчика отправляемых формой данных. Чтобы не было
+    возможности кликнуть много раз по кнопке отправки формы и много раз отправить данные формы, используем свойство
+    "isSubmitting" в объекте "formState", чтобы знать когда происходит отправка данных формы с целью отключить кнопку
+    отправки данных формы в такой момент. Для вывода ошибок используем свойство "errors" в объекте "formState".*/
     const {
         register,
         handleSubmit,
         formState: {isSubmitting, errors}
     } = useForm<FormData>();
 
-    const onSubmit = (data: FormData) => console.log(data);
+    const onSendDataSubmit = (data: FormData) => console.log(data);
 
     /*Элемент "form" позволяет использовать встроенную валидацию. Если не нужно использовать такую валидацию, то можно
     использовать атрибут "noValidate".*/
-    return <form className='login-form' onSubmit={handleSubmit(onSubmit)} method='post'>
+    return <form
+        className='login-form'
+        onSubmit={handleSubmit(onSendDataSubmit)}
+        method='post'
+    >
         <div className='form-title-container'>
-            <p className='form-title'>SIGN UP</p>
+            <p className='form-title'>Sign Up</p>
+        </div>
+
+        <div className='form-title-description-container'>
+            <p className='form-title-description'>Creating an account, you agree to our <a href=''>Terms of
+                User</a> and <br></br> acknowledge that you understand the <a href=''>Privacy Policy</a>.</p>
         </div>
 
         <div className='form-control'>
             <div className='username-title-container'>
-                <label className='username-title' htmlFor={usernameID}>Username:</label>
+                <label
+                    className='username-title'
+                    htmlFor={usernameID}
+                >Username</label>
             </div>
 
             <div className='username-input-container'>
@@ -61,20 +73,23 @@ export const LoginForm = () => {
                     // name='username'
                     type='text'
                     aria-describedby={usernameErrorMessageID}
-                    placeholder=' Enter username...'
+                    placeholder=' Enter your username...'
                     // required
                     /*При помощи атрибута "pattern" устанавливаем ограничение на вводимые символы.*/
                     // pattern={'[A-Za-z0-9\\-_\\.]{4,20}'}
                     {...register('username', {
                         required: 'The username field is required',
+
                         minLength: {
                             value: 4,
                             message: 'Minimum length is 4 characters'
                         },
+
                         maxLength: {
                             value: 20,
                             message: 'Maximum length is 20 characters'
                         },
+
                         pattern: {
                             /*
                             (?=.{4,20}$) username is 8-20 characters long
@@ -92,8 +107,11 @@ export const LoginForm = () => {
 
             <div className='username-error-message-container'>
                 {errors.username && (
-                    <p id={usernameErrorMessageID} aria-live='assertive' className='username-error-message'>
-                            <strong>Error:</strong> {errors.username.message}
+                    <p
+                        id={usernameErrorMessageID}
+                        aria-live='assertive'
+                        className='username-error-message'
+                    ><strong>Error:</strong> {errors.username.message}
                     </p>
                 )}
             </div>
@@ -104,7 +122,10 @@ export const LoginForm = () => {
                 {/*Нужно связывать каждый элемент управления формой с элементом "label". Для этого нужно использовать
                 атрибут "for" или "htmlFor" в элементе "label" и атрибут "id" в элементе управления формой с одинаковыми
                 значениями.*/}
-                <label className='email-title' htmlFor={emailID}>Email:</label>
+                <label
+                    className='email-title'
+                    htmlFor={emailID}
+                >Email</label>
             </div>
 
             <div className='email-input-container'>
@@ -115,14 +136,14 @@ export const LoginForm = () => {
                     // name='email'
                     type='email'
                     /*Для автозаполнения поля можно использовать атрибут "autoComplete" со значением, который будет
-                    соответсвовать типу поля.*/
+                    соответствовать типу поля.*/
                     autoComplete='email'
-                    /*В атрибует "aria-describedby" указываем значение атрибута "id" в сообщении об ошибке, чтобы
+                    /*В атрибут "aria-describedby" указываем значение атрибута "id" в сообщении об ошибке, чтобы
                     связать элемент управления формой и сообщение об ошибке в этой форме.*/
                     aria-describedby={emailErrorMessageID}
-                    placeholder=' Enter email address...'
+                    placeholder=' Enter your email address...'
                     // required
-                    /*Регистриуем поле формы при помощи хука "useForm()". Здесь также можно указать некоторые
+                    /*Регистрируем поле формы при помощи хука "useForm()". Здесь также можно указать некоторые
                     атрибуты, такие как "name" и "required".*/
                     {...register('email', {required: 'The email field is required'})}
                 />
@@ -141,7 +162,10 @@ export const LoginForm = () => {
 
         <div className='form-control'>
             <div className='password-title-container'>
-                <label className='password-title' htmlFor={passwordID}>Password:</label>
+                <label
+                    className='password-title'
+                    htmlFor={passwordID}
+                >Password</label>
             </div>
 
             <div className='password-input-container'>
@@ -153,7 +177,7 @@ export const LoginForm = () => {
                     type='password'
                     autoComplete='new-password'
                     aria-describedby={passwordErrorMessageID}
-                    placeholder=' Enter password...'
+                    placeholder=' Enter your password...'
                     // required
                     // minLength={8}
                     {...register('password', {
@@ -168,7 +192,11 @@ export const LoginForm = () => {
 
             <div className='password-error-message-container'>
                 {errors.password && (
-                    <p id={passwordErrorMessageID} aria-live='assertive' className='password-error-message'>
+                    <p
+                        id={passwordErrorMessageID}
+                        aria-live='assertive'
+                        className='password-error-message'
+                    >
                         <strong>Error:</strong> {errors.password.message}
                     </p>
                 )}
@@ -177,7 +205,10 @@ export const LoginForm = () => {
 
         <div className='form-control'>
             <div className='confirm-password-title-container'>
-                <label className='confirm-password-title' htmlFor={confirmPasswordID}>Confirm password:</label>
+                <label
+                    className='confirm-password-title'
+                    htmlFor={confirmPasswordID}
+                >Confirm password</label>
             </div>
 
             <div className='confirm-password-input-container'>
@@ -191,7 +222,7 @@ export const LoginForm = () => {
                     новый пароль.*/
                     autoComplete='new-password'
                     aria-describedby={confirmPasswordErrorMessageID}
-                    placeholder=' Confirm password...'
+                    placeholder=' Confirm your password...'
                     // required
                     // minLength={8}
                     {...register('confirmPassword', {
@@ -215,7 +246,7 @@ export const LoginForm = () => {
         </div>
 
         <div className='form-control-terms-of-user'>
-            {/*Также чтобы связать элемент управления формой с элементом "label", можно поместить этот элемент
+            {/*Также, чтобы связать элемент управления формой с элементом "label", можно поместить этот элемент
             управления формой внутрь элемента "label".*/}
             <div className='terms-of-user-title-and-input-container'>
                 <label className='terms-of-user-title'>
@@ -228,6 +259,7 @@ export const LoginForm = () => {
                         // required
                         {...register('termsOfUser', {required: 'The Terms of User field is required'})}
                     />
+
                     <span>I agree to the Terms of User</span>
                 </label>
             </div>
@@ -237,6 +269,35 @@ export const LoginForm = () => {
                     <p id={termsOfUserErrorMessageID} aria-live='assertive'
                        className='terms-of-user-error-message'>
                         <strong>Error:</strong> {errors.termsOfUser.message}
+                    </p>
+                )}
+            </div>
+        </div>
+
+        <div className='form-control-privacy-policy'>
+            {/*Также, чтобы связать элемент управления формой с элементом "label", можно поместить этот элемент
+            управления формой внутрь элемента "label".*/}
+            <div className='privacy-policy-title-and-input-container'>
+                <label className='privacy-policy-title'>
+                    <input
+                        // className='privacy-policy-input'
+                        className={errors.privacyPolicy ? 'privacy-policy-input input-error' : 'privacy-policy-input'}
+                        // name='termsOfUser'
+                        type='checkbox'
+                        aria-describedby={privacyPolicyErrorMessageID}
+                        // required
+                        {...register('privacyPolicy', {required: 'The Privacy Policy field is required'})}
+                    />
+
+                    <span>I agree to the Privacy Policy</span>
+                </label>
+            </div>
+
+            <div className='privacy-policy-error-message-container'>
+                {errors.privacyPolicy && (
+                    <p id={privacyPolicyErrorMessageID} aria-live='assertive'
+                       className='privacy-policy-error-message'>
+                        <strong>Error:</strong> {errors.privacyPolicy.message}
                     </p>
                 )}
             </div>
