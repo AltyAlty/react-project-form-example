@@ -1,5 +1,107 @@
 .App {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    width: 18%;
+
+    margin: 0 auto;
+}
+
+@media (max-width: 3840px) {
+    .App {
+        width: 12%;
+    }
+}
+
+@media (max-width: 2560px) {
+    .App {
+        width: 18%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .App {
+        width: 22%;
+    }
+}
+
+@media (max-width: 1450px) {
+    .App {
+        width: 26%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .App {
+        width: 33%;
+    }
+}
+
+@media (max-width: 960px) {
+    .App {
+        width: 43%;
+    }
+}
+
+@media (max-width: 810px) {
+    .App {
+        width: 53%;
+    }
+}
+
+@media (max-width: 610px) {
+    .App {
+        width: 59%;
+    }
+}
+
+@media (max-width: 540px) {
+    .App {
+        width: 70%;
+    }
+}
+
+@media (max-width: 440px) {
+    .App {
+        width: 80%;
+    }
+}
+
+@media (max-width: 428px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 414px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 412px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 390px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 384px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 375px) {
+    .App {
+        width: 96%;
+    }
+}
+
+@media (max-width: 360px) {
+    .App {
+        width: 96%;
+    }
 }

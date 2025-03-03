@@ -4,9 +4,10 @@
     justify-content: space-evenly;
     align-items: center;
 
-    width: 22%;
-    height: 840px;
-    margin-top: 3%;
+    width: 100%;
+
+    margin-top: 10px;
+    margin-bottom: 50px;
 
     background-color: #2aabab;
     border-radius: 6px;
@@ -14,29 +15,34 @@
 }
 
 .form-title-container {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .form-title {
     font-size: 2.05rem;
     font-weight: 500;
     line-height: 1;
+
     color: #264653;
 }
 
 .form-title-description-container {
-    margin-top: 15px;
-    margin-bottom: 30px;
+    width: 90%;
+
+    margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 .form-title-description {
     text-align: center;
-    font-size: 1.0rem;
+    font-size: .95rem;
     line-height: 1;
+
     color: #264653;
 }
 
 .form-title-description a {
+    color: #d3b672;
     text-decoration: none;
 }
 
@@ -51,23 +57,16 @@
     flex-direction: column;
 
     width: 90%;
-    margin-bottom: 4px;
-}
 
-.form-control {
-    height: 13%;
+    margin-bottom: 4px;
 }
 
 .form-control-terms-of-user,
 .form-control-privacy-policy {
-    margin-left: 15%;
-
-    height: 4%;
-    margin-top: 5px;
-    margin-bottom: 1px;
+    margin-left: 16.5%;
 }
 
-.form-control-privacy-policy {
+.form-control-terms-of-user {
     margin-top: 10px;
 }
 
@@ -75,8 +74,8 @@
 .email-title-container,
 .password-title-container,
 .confirm-password-title-container {
-    margin-bottom: 5px;
     margin-left: 10%;
+    margin-bottom: 4px;
 }
 
 .username-title,
@@ -87,6 +86,7 @@
 .privacy-policy-title {
     font-weight: 400;
     line-height: 1.2;
+
     color: #264653;
 }
 
@@ -100,18 +100,23 @@
 .terms-of-user-title,
 .privacy-policy-title {
     font-size: 1rem;
-    margin-left: 5px;
+
+    margin-left: 2px;
 }
 
 .username-error-message-container,
 .email-error-message-container,
 .password-error-message-container,
 .confirm-password-error-message-container {
+    height: 20px;
+
     margin-left: 10%;
 }
 
 .terms-of-user-error-message-container,
 .privacy-policy-error-message-container {
+    height: 24px;
+
     margin-left: 1%;
 }
 
@@ -126,6 +131,7 @@
     font-size: .9rem;
     font-weight: 400;
     line-height: 1.5;
+
     color: #346072;
 }
 
@@ -143,14 +149,13 @@
 .password-input,
 .confirm-password-input {
     width: 80%;
-    height: 38px;
+    height: 34px;
 
     font-size: 1.05rem;
     font-weight: 400;
     line-height: 1.5;
 
     color: #333333;
-
     box-shadow: none;
     border: none;
     border-radius: 3px;
@@ -163,42 +168,39 @@
     box-shadow: 0 5px 8px rgba(0, 0, 0, .2);
 }
 
+.terms-of-user-input,
+.privacy-policy-input {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 4px;
+}
+
 .terms-of-user-input:hover,
 .privacy-policy-input:hover {
-    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 5px 3px oklch(0.807 0.121 74.443);
 }
 
 .username-input:focus,
 .email-input:focus,
 .password-input:focus,
 .confirm-password-input:focus {
-    outline: 2px solid oklch(0.704 0.12 223.504);
+    outline: 2px solid oklch(0.807 0.121 74.443);
 }
 
-.input-error {
-    box-shadow: 3px 3px 10px 0 #f62681;
-}
-
+.input-error,
 .email-input:invalid {
     box-shadow: 3px 3px 10px 0 #f62681;
-}
-
-.terms-of-user-input,
-.privacy-policy-input {
-    margin-right: 5px;
-    width: 18px;
-    height: 18px;
 }
 
 .buttons-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 20px;
-    margin-bottom: 30px;
 
     width: 80%;
-    height: 14%;
+
+    margin-bottom: 20px;
 }
 
 .submit-button-container,
@@ -209,16 +211,16 @@
 .submit-button,
 .login-button {
     width: 100%;
-    height: 100%;
+    height: 50px;
 
     font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: .15rem;
-    color: #4d4d4d;
 
+    color: #4d4d4d;
     box-shadow: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .login-button:hover,
