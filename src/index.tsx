@@ -1,6 +1,7 @@
 /*
 Создание шаблона проекта: yarn create react-app . --template typescript
 Установка react-hook-form: yarn add react-hook-form
+Установка GitHub Pages: yarn add gh-pages --dev
 
 Запуск приложения: yarn start
 */

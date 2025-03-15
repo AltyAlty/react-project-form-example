@@ -17,10 +17,18 @@ seamless experience across all devices, from mobile phones to desktops.
 
 <hr>
 
+<p align="center">
+  <a href="https://altyalty.github.io/react-project-form-example/">
+    <strong>Link to the app</strong>
+  </a>
+</p>
+
+<hr>
+
 <h3 align="center" font-size='25px'>Tech Stack</h3>
 
 <table align="center">
-  <tr>    
+  <tr>
     <td align="center" width="129">
         <img src="./readme-images/javascript-icon.png" alt="icon" width="65" height="65" />
       <br>Javascript
@@ -45,22 +53,40 @@ seamless experience across all devices, from mobile phones to desktops.
 <h3 align="center" font-size='25px'>Scripts</h3>
 
 <table align="center">
-  <tr>    
+  <tr>
     <td align="center" width="200">
         <b>Script</b>
     </td>
     <td align="center" width="300">
         <b>Description</b>
-    </td>    
+    </td>
   </tr>
 
-  <tr>    
+  <tr>
     <td width="200">
         yarn start
     </td>
     <td width="300">
         Runs the application
-    </td>    
+    </td>
+  </tr>
+
+  <tr>
+    <td width="200">
+        yarn build
+    </td>
+    <td width="300">
+        Makes a build for GitHub Pages
+    </td>
+  </tr>
+
+  <tr>
+    <td width="200">
+        gh-pages -d build
+    </td>
+    <td width="300">
+        Deploys the build to GitHub Pages
+    </td>
   </tr>
 </table>
 
