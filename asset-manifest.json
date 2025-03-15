@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-project-form-example/static/css/main.25ec2a46.css",
+    "main.js": "/react-project-form-example/static/js/main.07da3382.js",
+    "static/js/787.11b8be01.chunk.js": "/react-project-form-example/static/js/787.11b8be01.chunk.js",
+    "index.html": "/react-project-form-example/index.html",
+    "main.25ec2a46.css.map": "/react-project-form-example/static/css/main.25ec2a46.css.map",
+    "main.07da3382.js.map": "/react-project-form-example/static/js/main.07da3382.js.map",
+    "787.11b8be01.chunk.js.map": "/react-project-form-example/static/js/787.11b8be01.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25ec2a46.css",
+    "static/js/main.07da3382.js"
+  ]
+}
