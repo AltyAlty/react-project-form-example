@@ -63,28 +63,28 @@ seamless experience across all devices, from mobile phones to desktops.
   </tr>
 
   <tr>
-    <td width="200">
+    <td>
         yarn start
     </td>
-    <td width="300">
+    <td>
         Runs the application
     </td>
   </tr>
 
   <tr>
-    <td width="200">
+    <td>
         yarn build
     </td>
-    <td width="300">
+    <td>
         Makes a build for GitHub Pages
     </td>
   </tr>
 
   <tr>
-    <td width="200">
+    <td>
         gh-pages -d build
     </td>
-    <td width="300">
+    <td>
         Deploys the build to GitHub Pages
     </td>
   </tr>
