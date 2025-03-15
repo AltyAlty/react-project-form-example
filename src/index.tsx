@@ -4,6 +4,8 @@
 Установка GitHub Pages: yarn add gh-pages --dev
 
 Запуск приложения: yarn start
+Собрать билд для GitHub Pages: yarn build
+Развернуть билд на GitHub Pages: gh-pages -d build
 */
 
 /*Статья по формам: https://evilmartians.com/chronicles/html-best-practices-for-login-and-signup-forms
