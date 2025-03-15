@@ -19,7 +19,7 @@ seamless experience across all devices, from mobile phones to desktops.
 
 <p align="center">
   <a href="https://altyalty.github.io/react-project-form-example/">
-    <strong>Link to the app</strong>
+    <strong>Link to the form</strong>
   </a>
 </p>
 
