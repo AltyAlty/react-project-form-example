@@ -45,6 +45,10 @@ seamless experience across all devices, from mobile phones to desktops.
         <img src="./readme-images/react-hook-form-icon.png" alt="icon" width="65" height="65" />
       <br>React Hook Form
     </td>
+    <td align="center" width="129">
+        <img src="./readme-images/yarn-icon.png" alt="icon" width="65" height="65" />
+      <br>Yarn
+    </td>
   </tr>
 </table>
 
@@ -67,7 +71,7 @@ seamless experience across all devices, from mobile phones to desktops.
         yarn start
     </td>
     <td>
-        Runs the application
+        Runs application
     </td>
   </tr>
 
