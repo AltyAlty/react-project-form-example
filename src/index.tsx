@@ -3,6 +3,7 @@
 Установка react-hook-form: yarn add react-hook-form
 Установка GitHub Pages: yarn add gh-pages --dev
 
+Установка всех модулей (если необходимо): yarn install
 Запуск приложения: yarn start
 Собрать билд для GitHub Pages: yarn build
 Развернуть билд на GitHub Pages: gh-pages -d build

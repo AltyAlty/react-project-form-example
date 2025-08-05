@@ -72,6 +72,15 @@ seamless experience across all devices, from mobile phones to desktops.
 
   <tr>
     <td>
+        yarn install
+    </td>
+    <td>
+        Installs project dependencies
+    </td>
+  </tr>
+
+  <tr>
+    <td>
         yarn start
     </td>
     <td>
