@@ -49,6 +49,10 @@ seamless experience across all devices, from mobile phones to desktops.
         <img src="./readme-images/yarn-icon.png" alt="icon" width="65" height="65" />
       <br>Yarn
     </td>
+    <td align="center" width="129">
+        <img src="./readme-images/github-pages-icon.png" alt="icon" width="65" height="65" />
+      <br>GitHub Pages
+    </td>
   </tr>
 </table>
 
